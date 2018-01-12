@@ -5,7 +5,7 @@ Developed while doing the course on [Udacity](http://udacity.com)
 
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
-### `npm start`
+#### `npm start`
 
 Runs the app in development mode.
 

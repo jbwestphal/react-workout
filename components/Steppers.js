@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity, Platform, StyleSheet } from 'react-native'
 import { FontAwesome, Entypo } from '@expo/vector-icons'
 
 export default function Steppers({ max, step, value, unit, onIncrement, onDecrement }) {

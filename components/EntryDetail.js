@@ -63,6 +63,20 @@ function mapStateToProps (state, { navigation }) {
   }
 }
 
+function mapDispatchToProps (dispatch, { navigation }) {
+  const { entryId } = navigation.state.params
+
+  return {
+    remove: () => dispatch(addEntry({
+      [entryId]: timeToString() === entryId
+        ? getDailyReminderValue()
+        : null
+    })),
+    goBack: () => navigation.goBack(),
+  }
+}
+
 export default connect(
   mapStateToProps,
+  mapDispatchToProps,
 )(EntryDetail)

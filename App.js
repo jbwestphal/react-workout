@@ -3,13 +3,16 @@ import { View, Platform, StatusBar } from 'react-native'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import reducer from './reducers'
-import AddEntry from './components/AddEntry'
-import History from './components/History'
 import { TabNavigator, StackNavigator } from 'react-navigation'
+
 import { purple, white } from './utils/colors'
 import { FontAwesome, Ionicons } from '@expo/vector-icons'
 import { Constants } from 'expo'
+
+import AddEntry from './components/AddEntry'
 import EntryDetail from './components/EntryDetail'
+import History from './components/History'
+import Live from './components/Live'
 
 function CustomStatusBar ({backgroundColor, ...props}) {
   return (
@@ -32,6 +35,13 @@ const Tabs = TabNavigator({
     navigationOptions: {
       tabBarLabel: 'Add Entry',
       tabBarIcon: ({ tintColor }) => <FontAwesome name='plus-square' size={30} color={tintColor} />
+    },
+  },
+  Live: {
+    screen: Live,
+    navigationOptions: {
+      tabBarLabel: 'Live',
+      tabBarIcon: ({ tintColor }) => <FontAwesome name='ios-speedometer' size={30} color={tintColor} />
     },
   },
 }, {
